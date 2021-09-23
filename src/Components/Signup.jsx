@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 
 import axios from "axios";
 
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Alert } from "react-bootstrap";
 
 const Signup = () => {
+  const [error, setError] = useState('')
+
+ 
+
   const {
     register,
     handleSubmit,
@@ -13,36 +17,48 @@ const Signup = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
+
+    
 
     const url = `https://crypto-ap.herokuapp.com/api/users`;
 
-    const body = {
+    const body =  {
       user_name: data.user_name,
       email: data.email,
       password: data.password,
       rol: "USER",
-    };
+      };
 
-    await axios
-      .post(url, body)
-      .then((response) => {
-        if(response) {
-            return window.location ='/login';
+      await axios.post(url, body)
+      .then( res => {
+        if ( res ) {
+          window.location = "/login"
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+      .catch( error =>{
+         if (error.response) {
+          setError(error.response.data);
+      }} )
 
+    };
+    
+   
   return (
     <div className="d-flex justify-content-center align-items-center">
       <Card bg="dark" style={{ width: "18rem" }} className="mb-2 ">
         <Card.Header className="text-center mt-3">Registrate</Card.Header>
         <Card.Body className="text-center ">
           <form onSubmit={handleSubmit(onSubmit)} className="w-100">
-           
+            <div>
+
+              {error
+                ?<div>
+                  <Alert variant="danger" >Ha ocurrido un error <p>{error.errors[0].msg}</p></Alert>
+                </div>
+                : ''
+              }
+
+            </div>
             <input
               className="mb-4 w-100 p-2"
               type="text"
