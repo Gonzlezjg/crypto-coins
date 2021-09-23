@@ -1,0 +1,25 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #c9c9c9;
+}
+
+.hoverNavBar:hover {
+    border-bottom: 3px solid #F05454;
+}
+
+.login{
+    border: 2.5px solid #F05454;
+    padding: 6px;
+    border-radius: 5px;
+}
+.login:hover{
+    transition: .2s linear;
+    border: 2.5px solid transparent;
+    background-color: #F05454;
+}
