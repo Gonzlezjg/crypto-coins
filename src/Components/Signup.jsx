@@ -1,14 +1,17 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 
+import {
+  Redirect,
+} from "react-router-dom";
+
 import axios from "axios";
 
 import { Card, Button, Alert } from "react-bootstrap";
 
 const Signup = () => {
-  const [error, setError] = useState('')
 
- 
+  const [error, setError] = useState('')
 
   const {
     register,
@@ -32,7 +35,8 @@ const Signup = () => {
       await axios.post(url, body)
       .then( res => {
         if ( res ) {
-          window.location = "/login"
+          return window.location = "/login"
+          // return <Redirect to="/login" />
         }
       })
       .catch( error =>{

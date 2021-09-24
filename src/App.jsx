@@ -44,7 +44,7 @@ function App() {
             <CoinState>
               <Route path="/" component={Inicio} exact />
               <Route path="/signup" component={Signup} exact />
-              <Route path="/login" component={Login} exact />
+              <Route path="/login" component={Login} />
               <Route path="/coins/:coinName" component={Coin} />
             </CoinState>
           </Switch>
