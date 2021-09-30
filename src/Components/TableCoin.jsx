@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CoinsContext from "../context/coins/CoinsContext";
 
 import { BsStar } from "react-icons/bs";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import { Image, Table, Spinner, Container } from "react-bootstrap";
 
@@ -28,18 +29,19 @@ const TableCoin = () => {
         spin
       ) : (
         <Table
+        variant="dark"
+          hover
           responsive
-          className="fw-bold"
+          className="fw-bold shadow"
           style={{
-            background: "#282a36",
             color: "#DDDDDD",
-            border: "3px solid #44475a",
+            border: "3px solid #222831",
             fontSize: ".9rem",
           }}
         >
-          <thead style={{ background: "#30475E" }}>
+          <thead style={{ borderBottom: "4px solid #222831" }}>
             <tr>
-              <th>#</th>
+              <th className="text-center">#</th>
               <th>Nombre</th>
               <th>Simbolo</th>
               <th>Precio</th>
@@ -51,7 +53,7 @@ const TableCoin = () => {
           <tbody>
             {coins.map((coin) => {
               return (
-                <tr key={coin.id} className="bg-dark">
+                <tr key={coin.id} className="text-white">
                   <td className="py-4 d-flex justify-content-around align-items-center">
                     <BsStar className="fs-5" />
                     {coin.market_cap_rank}
@@ -76,17 +78,21 @@ const TableCoin = () => {
                   {coin.price_change_percentage_24h > 0 ? (
                     <td className="text-success py-4">
                       {coin.price_change_percentage_24h.toFixed(2)}%
+                      <MdArrowDropUp />
                     </td>
                   ) : (
                     <td className="text-danger py-4">
                       {coin.price_change_percentage_24h.toFixed(2)}%
+                       < MdArrowDropDown />
                     </td>
                   )}
                   <td className="py-4">
-                    {new Intl.NumberFormat().format(coin.total_volume)} USD$
+                    {new Intl.NumberFormat().format(coin.total_volume)}
+                    <span className="fw-bold mx-1" style={{color: "#03506f"}}>USD$</span>
                   </td>
                   <td className="py-4">
-                    {new Intl.NumberFormat().format(coin.market_cap)} USD$
+                    {new Intl.NumberFormat().format(coin.market_cap)}
+                    <span className="fw-bold mx-1" style={{color: "#03506f"}}>USD$</span>
                   </td>
                 </tr>
               );

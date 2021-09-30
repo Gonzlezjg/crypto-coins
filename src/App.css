@@ -1,25 +1,70 @@
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    color: #c9c9c9;
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "segoe ui", Roboto,
+    Helvetica, Arial, sans-serif;
+  color: #dddddd;
+  font-size: 0.9rem;
 }
 
-.hoverNavBar:hover {
-    border-bottom: 3px solid #F05454;
+.login {
+  border: 2px solid #03506f;
+  border-radius: 5px;
+  background: transparent;
+  padding: 7px;
+  color: #dddddd;
+  border-bottom: 4px solid #03506f;
+  transform: skew(-21deg);
+}
+.login:hover {
+  transition: 0.2s ease-out;
+  border: 2px solid #033f57;
+  color: #03506f;
+  border-bottom: 4px solid #03506fbb;
 }
 
-.login{
-    border: 2.5px solid #F05454;
-    padding: 6px;
-    border-radius: 5px;
+.login-content {
+  display: inline-block;
+  transform: skew(21deg);
 }
-.login:hover{
-    transition: .2s linear;
-    border: 2.5px solid transparent;
-    background-color: #F05454;
+
+.modal-style {
+  background-color: #121212;
+}
+
+.input-form {
+  background-color: #222831;
+  border: none;
+  border-radius: 5px;
+  padding: .9rem .3rem;
+}
+
+.input-form:focus {
+  background-color: #222831;
+  outline: 2px solid #03506f;
+  box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
+-webkit-box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
+-moz-box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
+  color: #dddddd;
+}
+
+.btn-default {
+  border: none;
+  color: #dddddd;
+  background: transparent;
+  font-weight: bold;
+}
+
+.btn-default:hover {
+  transition: 0.2s ease-out;
+  color: #03506fd3;
+}
+.btn-default-contract{
+  background: #000;
+}
+
+.border-white{
+  filter: drop-shadow(-2px 2px 15px rgba(255, 255, 255, 0.4))
 }

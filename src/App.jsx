@@ -10,10 +10,8 @@ import { authReducer } from "./context/auth/AuthReducer";
 // Components
 import Heading from "./Components/Heading";
 import Inicio from "./Components/Inicio";
-import Signup from "./Components/Signup";
 import Footer from "./Components/Footer";
 import Coin from "./Components/Coin";
-import Login from "./Components/Login";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -43,8 +41,6 @@ function App() {
           <Switch>
             <CoinState>
               <Route path="/" component={Inicio} exact />
-              <Route path="/signup" component={Signup} exact />
-              <Route path="/login" component={Login} />
               <Route path="/coins/:coinName" component={Coin} />
             </CoinState>
           </Switch>

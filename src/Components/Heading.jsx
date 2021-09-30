@@ -6,10 +6,14 @@ import{AuthContext} from "../context/auth/AuthContext"
 import { types } from "../context/types";
 
 
-import { FiLogIn } from "react-icons/fi"
 import { FiLogOut } from "react-icons/fi"
+import { FaUserCircle } from "react-icons/fa"
+
 import { Nav } from "react-bootstrap";
 import { Image } from "react-bootstrap";
+
+import { SignUpModal } from "./Modal/SignUp"
+import {ModalLog} from "./Modal/Login";
 
 
 import logo from "../Image/logo.png";
@@ -24,7 +28,7 @@ const Heading = () => {
   const history = useHistory();
 
   const logout = () => {
-   history.replace("/login");
+   history.replace("/");
     localStorage.removeItem("token");   
     dispatch({
       type: types.logout,
@@ -34,9 +38,9 @@ const Heading = () => {
 
   return (
     <Nav
-      className="shadow mb-4 w-100 py-2 d-flex align-items-center justify-content-between px-3"
-      activeKey="/home"
-      style={{ background: "#30475E" }}
+      className="shadow mb-4 w-100  d-flex align-items-center justify-content-between px-3"
+      activeKey="/"
+      style={{ background: "#121212" }}
     >
       <div className="d-flex">
         <Image src={logo} height={80} width={80} />
@@ -45,30 +49,30 @@ const Heading = () => {
           <span style={{ color: "#ffb86c" }}> Cp</span>
         </h5>
       </div>
-      <div className="d-flex align-items-center" style={{ fontSize: ".9rem" }}>
+      <div className="d-flex align-items-center fw-bold ">
         <Nav.Item>
-          <Link to="/" className="mx-2 text-white hoverNavBar text-decoration-none pb-2">
-            INICIO
+          <Link to="/" className="mx-2  btn-default text-decoration-none pb-2 ">
+            Inicio
           </Link>
         </Nav.Item>
         <Nav.Item>
-          <Link to="/coins" className="mx-2 text-white hoverNavBar text-decoration-none pb-2">
-            MONEDAS
+          <Link to="/coins" className="mx-2  btn-default text-decoration-none pb-2">
+            Monedas
           </Link>
         </Nav.Item>
         <Nav.Item>
-          <Link to="markets" className="mx-2 text-white hoverNavBar text-decoration-none pb-2">
-            MERCADOS
+          <Link to="markets" className="mx-2  btn-default text-decoration-none pb-2">
+            Mercados
           </Link>
         </Nav.Item>
         <Nav.Item>
-          <Link to="/nft" className="mx-2 text-white hoverNavBar text-decoration-none pb-2">
+          <Link to="/nft" className="mx-2  btn-default text-decoration-none pb-2">
             NFT
           </Link>
         </Nav.Item>
       </div>
 
-      <div className="text-white">
+      <div className="">
         {/* <input
           type="text"
           name="buscar"
@@ -78,30 +82,20 @@ const Heading = () => {
         /> */}
 
         {token ? (
-          <div className="d-flex align-items-center">
-            <h5 className="mx-4">Bienvenido <span style={{color: "#F05454"}}>{user.user.user_name}</span></h5>
-            <Link
-              to="/login"
-              className="mx-2 text-white hoverNavBar text-decoration-none login"
+          <div className="d-flex align-items-center justify-content-center my-auto">
+            <h5 className="my-auto">Bienvenido <span style={{color: "#033f57"}}>{user.user.user_name}</span></h5>
+            <FaUserCircle className="fs-4 mx-3" />
+            <button
+              className="mx-2 login"
               onClick={ logout }
             >
               <FiLogOut />
-            </Link>
+            </button>
           </div>
         ) : (
           <div>
-            <Link
-              to="/login"
-              className="mx-2 text-white hoverNavBar text-decoration-none login "
-            >
-             <span>INICIA SESION <FiLogIn/></span>
-            </Link>
-            <Link
-              to="/signup"
-              className="mx-2 text-white hoverNavBar text-decoration-none"
-            >
-              REGISTRARSE
-            </Link>
+            <ModalLog />
+            <SignUpModal />
           </div>
         )}
       </div>
