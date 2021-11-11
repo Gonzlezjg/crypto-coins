@@ -35,7 +35,7 @@ export const SignUpModal = () => {
       .post(url, body)
       .then((res) => {
         if (res) {
-          return history.push("/login");
+          return res;
         }
       })
       .catch((error) => {

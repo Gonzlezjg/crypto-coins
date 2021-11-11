@@ -9,20 +9,25 @@ body {
   font-size: 0.9rem;
 }
 
+.topBar{
+  font-size: .8rem;
+  height: 40px;
+}
+
 .login {
-  border: 2px solid #03506f;
+  border: 2px solid rgb(97, 136, 255);
   border-radius: 5px;
   background: transparent;
   padding: 7px;
   color: #dddddd;
-  border-bottom: 4px solid #03506f;
+  border-bottom: 4px solid rgb(97, 136, 255);
   transform: skew(-21deg);
 }
 .login:hover {
   transition: 0.2s ease-out;
-  border: 2px solid #033f57;
-  color: #03506f;
-  border-bottom: 4px solid #03506fbb;
+  border: 2px solid rgb(97, 136, 255);
+  color: rgb(97, 136, 255);
+  border-bottom: 4px solid rgb(97, 136, 255);
 }
 
 .login-content {
@@ -43,10 +48,10 @@ body {
 
 .input-form:focus {
   background-color: #222831;
-  outline: 2px solid #03506f;
-  box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
--webkit-box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
--moz-box-shadow: -2px 5px 44px -3px rgba(3,80,111,0.82);
+  outline: 2px solid rgb(97, 136, 255);
+  box-shadow: -2px 5px 44px -3px rgba(97, 136, 255, 0.62);
+-webkit-box-shadow: -2px 5px 44px -3px rgba(97, 136, 255, 0.62);
+-moz-box-shadow: -2px 5px 44px -3px rgba(97, 136, 255, 0.62);
   color: #dddddd;
 }
 
@@ -55,11 +60,13 @@ body {
   color: #dddddd;
   background: transparent;
   font-weight: bold;
+  border-radius: 5px;
 }
 
 .btn-default:hover {
   transition: 0.2s ease-out;
-  color: #03506fd3;
+  color: rgb(97, 136, 255);
+  text-shadow: 2px 1px 3px rgba(97, 136, 255, 0.479);
 }
 .btn-default-contract{
   background: #000;

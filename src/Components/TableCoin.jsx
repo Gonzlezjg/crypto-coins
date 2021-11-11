@@ -29,17 +29,17 @@ const TableCoin = () => {
         spin
       ) : (
         <Table
-        variant="dark"
           hover
           responsive
           className="fw-bold shadow"
           style={{
+            backgroundColor :"#121212",
             color: "#DDDDDD",
-            border: "3px solid #222831",
+            border: "3px solid #121212",
             fontSize: ".9rem",
           }}
         >
-          <thead style={{ borderBottom: "4px solid #222831" }}>
+          <thead style={{ borderBottom: "4px solid #121212" }}>
             <tr>
               <th className="text-center">#</th>
               <th>Nombre</th>
@@ -66,7 +66,7 @@ const TableCoin = () => {
                       width={20}
                     />
 
-                    <Link to={`/coins/${coin.id}`} className="text-white"
+                    <Link to={`/coins/${coin.id}`} className=" text-white"
                     onClick={()=> getCoin(coin.id)} >
                       {coin.name}
                     </Link>
@@ -88,11 +88,11 @@ const TableCoin = () => {
                   )}
                   <td className="py-4">
                     {new Intl.NumberFormat().format(coin.total_volume)}
-                    <span className="fw-bold mx-1" style={{color: "#03506f"}}>USD$</span>
+                    <span className="fw-bold mx-1" style={{color: "rgb(97, 136, 255)"}}>USD$</span>
                   </td>
                   <td className="py-4">
                     {new Intl.NumberFormat().format(coin.market_cap)}
-                    <span className="fw-bold mx-1" style={{color: "#03506f"}}>USD$</span>
+                    <span className="fw-bold mx-1" style={{color: "rgb(97, 136, 255)"}}>USD$</span>
                   </td>
                 </tr>
               );

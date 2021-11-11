@@ -15,6 +15,7 @@ import Coin from "./Components/Coin";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import TopBarData from "./Components/TopBarData";
 
 const initialize = () => {
   return JSON.parse(localStorage.getItem("user")) || { logged: false };
@@ -33,10 +34,11 @@ function App() {
   return (
     <div
       className="App"
-      style={{ backgroundColor: "#222831", minHeight: "100vh", width: "100%" }}
+      style={{ backgroundColor: "rgb(23, 23, 26)", minHeight: "100vh", width: "100%" }}
     >
       <AuthContext.Provider value={{ user, dispatch }}>
         <Router>
+          <TopBarData />
           <Heading />
           <Switch>
             <CoinState>

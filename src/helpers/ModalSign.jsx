@@ -23,11 +23,12 @@ export function ModalSign(props) {
           <div>
             <form onSubmit={handleSubmit(onSubmit)} className="w-100">
               <div>
-                {error ? (
+                {error.errors ? (
                   <div>
-                    <Alert variant="danger">
-                      Ha ocurrido un error <p>{error.errors[0].msg}</p>
-                    </Alert>
+                    <div className="text-center" style={{background: "#cccc", border: "2px solid #121212", borderRadius: "5px", padding: "5px", marginBottom: "5px",
+                    }}>
+                      <p className="text-white my-auto">{error.errors[0].msg}</p>
+                    </div>
                   </div>
                 ) : (
                   ""
@@ -63,7 +64,8 @@ export function ModalSign(props) {
   
               <button
                 type="submit"
-                className="my-4 btn-default w-100"
+                className="py-4 my-4 btn-default w-100"
+                style={{border: "4px solid rgb(97, 136, 255)"}}
               >
                 Registrar
               </button>

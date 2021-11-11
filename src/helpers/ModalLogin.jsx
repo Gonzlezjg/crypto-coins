@@ -49,7 +49,8 @@ const ModalLogin = (props) => {
 
               <button
                 type="submit"
-                className="my-4 btn-default w-100"
+                className="py-4 my-4 btn-default w-100"
+                style={{border: "4px solid rgb(97, 136, 255)"}}
               >
                 Ingresar <FaBitcoin className="fw-bold fs-5" />
               </button>

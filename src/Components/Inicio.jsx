@@ -15,7 +15,7 @@ const Inicio = () => {
             </section>
             <section className='mt-5 mb-5 pt-5 pb-1 px-5 shadow w-100' style={{ backgroundColor: '#121212' }}>
                 <div>
-                    <h4 className='fw-bold' >Top <span style={{ color: '#30475E' }}>50</span> monedas</h4>
+                    <h4 className='fw-bold' >Top <span style={{ color: 'rgb(97, 136, 255)' }}>50</span> monedas</h4>
                 </div>
             </section>
             <section className='px-3' >
